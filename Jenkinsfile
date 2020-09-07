@@ -45,6 +45,8 @@ pipeline {
             steps {
                 sh """
                 echo "Running Unit Tests"
+                """
+                sh """
                 mvn test
                 """
             }
@@ -55,6 +57,8 @@ pipeline {
             steps {
                 sh """
                 echo "Building Artifact"
+                """
+                sh """
                 mvn clean package
                 """
             }
