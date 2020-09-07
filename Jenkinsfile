@@ -25,19 +25,20 @@ pipeline {
         }
 
         stage('Code Checkout') {
-             sh """
-             echo "Code checkout init"
-             """
             steps {
+            sh """
+                         echo "Code checkout init"
+                         """
                 checkout([
                     $class: 'GitSCM',
                     branches: [[name: '*/main']],
                     userRemoteConfigs: [[url: 'https://github.com/ggmr2212/gs-rest-service.git']]
                 ])
-            }
             sh """
-            echo "Code checkout end"
-            """
+                        echo "Code checkout end"
+                        """
+            }
+
         }
 
         stage(' Unit Testing') {
