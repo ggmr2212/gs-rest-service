@@ -31,7 +31,7 @@ pipeline {
                          """
                 checkout([
                     $class: 'GitSCM',
-                    branches: [[name: '*/main']],
+                    branches: [[name: '*/master']],
                     userRemoteConfigs: [[url: 'https://github.com/ggmr2212/gs-rest-service.git']]
                 ])
             sh """
